@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane fx:id="mainCenter_form" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagement.dashboardAdminController">
+    <children>
+        <!-- Navigation Pane -->
+        <AnchorPane fx:id="nav_form" prefHeight="600.0" prefWidth="224.0" style="-fx-background-color: #2C3E50;">
+            <children>
+                <Label fx:id="adminId_label" layoutX="73.0" layoutY="274.0" style="-fx-text-fill: white; -fx-font-size: 16px;" text="Admin ID" />
+                <Circle fx:id="circle_image" layoutX="107.0" layoutY="184.0" radius="56.0" />
+                <Button fx:id="edit_btn" layoutX="90.0" layoutY="140.0" onAction="#insertImage" visible="false">
+                    <graphic>
+                        <FontAwesomeIcon fx:id="edit_icon" fill="#ffffff" glyphName="PENCIL" size="20" />
+                    </graphic>
+                </Button>
+                <Button fx:id="logout_btn" layoutX="56.0" layoutY="499.0" onAction="#logout" prefHeight="26.0" prefWidth="112.0" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" text="Đăng xuất" />
+                <Button fx:id="arrow_btn" layoutX="190.0" layoutY="10.0" onAction="#sliderArrow" style="-fx-background-color: transparent; -fx-text-fill: white;" text="&gt;" />
+                <Button fx:id="bars_btn" layoutX="190.0" layoutY="10.0" onAction="#sliderBars" style="-fx-background-color: transparent; -fx-text-fill: white;" text="||" visible="false" />
+            </children>
+        </AnchorPane>
+
+        <!-- Half Navigation Pane (for sliding effect) -->
+        <AnchorPane fx:id="halfNav_form" layoutX="224.0" prefHeight="600.0" prefWidth="77.0" style="-fx-background-color: #34495E;">
+            <children>
+                <Button fx:id="arrow_btn1" layoutX="10.0" layoutY="10.0" onAction="#sliderArrow" style="-fx-background-color: transparent; -fx-text-fill: white;" text="&gt;" />
+                <Button fx:id="bars_btn1" layoutX="10.0" layoutY="10.0" onAction="#sliderBars" style="-fx-background-color: transparent; -fx-text-fill: white;" text="||" visible="false" />
+            </children>
+        </AnchorPane>
+
+        <!-- Main Content Area -->
+        <AnchorPane fx:id="addBook_form" layoutX="224.0" prefHeight="600.0" prefWidth="576.0" style="-fx-background-color: #ECF0F1;">
+            <children>
+                <Label fx:id="currentForm_label" layoutX="48.0" layoutY="74.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Thêm sách" />
+                <Label layoutX="66.0" layoutY="117.0" text="Tựa đề:" />
+                <TextField fx:id="bookTitle_field" layoutX="138.0" layoutY="114.0" prefWidth="200.0" />
+                <Label layoutX="67.0" layoutY="155.0" text="Tác giả:" />
+                <TextField fx:id="author_field" layoutX="138.0" layoutY="154.0" prefWidth="200.0" />
+                <Label layoutX="61.0" layoutY="196.0" text="Thể loại:" />
+                <TextField fx:id="bookType_field" layoutX="138.0" layoutY="194.0" prefWidth="200.0" />
+                <Label layoutX="47.0" layoutY="238.0" text="Ảnh minh họa:" />
+                <TextField fx:id="imagePath_field" editable="false" layoutX="138.0" layoutY="234.0" prefWidth="200.0" />
+                <Button fx:id="browseImage_btn" layoutX="356.0" layoutY="234.0" onAction="#browseImage" text="Browse" />
+                <Button fx:id="addingBooks_btn" layoutX="138.0" layoutY="274.0" onAction="#addBook" style="-fx-background-color: #2ECC71; -fx-text-fill: white;" text="Thêm sách" />
+                <Label fx:id="status_label" layoutX="100.0" layoutY="250.0" style="-fx-text-fill: red;" text="" />
+                <Button fx:id="minimize" layoutX="500.0" layoutY="10.0" onAction="#minimize" style="-fx-background-color: transparent;" text="_" />
+                <Button fx:id="close" layoutX="530.0" layoutY="10.0" onAction="#exit" style="-fx-background-color: transparent; -fx-text-fill: red;" text="X" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
