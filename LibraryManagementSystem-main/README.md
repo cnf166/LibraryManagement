@@ -6,7 +6,4 @@ Thành viên:
 - Nguyễn Nhật Minh
 - Nguyễn Phạm Sơn Hải
 
-Đóng góp:
-- Nguyễn Việt Anh: 100%
-
 
